@@ -1,0 +1,50 @@
+.flash-box
+  グループ名を作成しました。
+
+.wrapper
+  .wrapper__chat-side
+    .wrapper__chat-side__side-header
+      .wrapper__chat-side__side-header__box
+        %p.wrapper__chat-side__side-header__box__user-name
+          taka
+        %ul.wrapper__chat-side__side-header__box__menu
+          = fa_icon "edit"
+          = fa_icon "cog"
+          %li.wrapper__chat-side__side-header__box__menu__new-group
+          %li.wrapper__chat-side__side-header__box__menu__edit-user
+    .wrapper__chat-side__groups
+      %p.wrapper__chat-side__groups__group-name
+        グループ１
+      %p.wrapper__chat-side__groups__group__latest-message
+        あああああああ
+ 
+  .wrapper__chat-main
+    .wrapper__chat-main__main-header
+      .wrapper__chat-main__main-header__left-box
+        %h2.wrapper__chat-main__main-header__left-box__current-group
+          グループ
+        %ul.wrapper__chat-main__main-header__left-box__member-list
+          Member
+          %li.wrapper__chat-main__main-header__left-box__member-list__member
+      .wrapper__chat-main__main-header__edit-btn
+        Edit
+    .wrapper__chat-main__messages
+      .wrapper__chat-main__messages__message
+        .wrapper__chat-main__messages__message__upper-info
+          %p.wrapper__chat-main__messages__message__upper-info__talker
+            taka
+          %p.wrapper__chat-main__messages__message__upper-info__date
+            2019/10/21(Mon) 14:41:43
+      %p.wrapper__chat-main__messages__message__text
+        あああああああ  
+    .wrapper__chat-main__form
+      %form.wrapper__chat-main__form__new__message
+        %input{:name => "utf8", :type => "hidden",}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => "gTV/KnwPVwMfsYecxzUAfln5AP41paH9zOPdHAFYfrJejbaNKdnARwhf64H8I3D6ZYnKfDdH9fNo0PPK0Z"}/
+        .wrapper__chat-main__form__new__message__input-box
+          %input.wrapper__chat-main__form__new__message__input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+          %label.wrapper__chat-main__form__new__message__input-box__image{:for => "message_image"}
+            %i.fa.fa-image
+              %input.wrapper__chat-main__form__new__message__input-box__image__file{:name => "message[image]", :type => "file", id: "message_image"}/
+        %input.wrapper__chat-main__form__new__message__input-box__submit__btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/ 
+     
