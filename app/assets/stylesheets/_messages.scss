@@ -24,16 +24,25 @@
         justify-content: space-between;
         width: 100%;
         font-weight: bold;
-      }
         &__menu{
-        display: flex;
-      }
-        &__new-group{
-        margin-left: 0.3rem;
-      }
-        &__edit-user{
-        margin-left: 0.3rem;
+          display: flex;
+          &__new-group{
+            margin-left: 0.3rem;
+            &__icon{
+              color: white;
+            }
+          }
+            &__edit-user{
+            margin-left: 0.3rem;
+            &__icon{
+              color: white;
+            }
+            }
         }
+        
+      }
+        
+       
         
     }
 
