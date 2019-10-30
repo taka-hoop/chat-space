@@ -2,23 +2,7 @@
   グループ名を作成しました。
 
 .wrapper
-  .wrapper__chat-side
-    .wrapper__chat-side__side-header
-      .wrapper__chat-side__side-header__box
-        %p.wrapper__chat-side__side-header__box__user-name
-          = current_user.name
-        %ul.wrapper__chat-side__side-header__box__menu
-          %li.wrapper__chat-side__side-header__box__menu__new-group
-            = link_to (new_group_path), class:"wrapper__chat-side__side-header__box__menu__new-group__icon"do
-              = fa_icon "edit"
-          %li.wrapper__chat-side__side-header__box__menu__edit-user 
-            = link_to edit_user_path(current_user), class:"wrapper__chat-side__side-header__box__menu__edit-user__icon"do
-              = fa_icon "cog"
-    .wrapper__chat-side__groups
-      %p.wrapper__chat-side__groups__group-name
-        グループ１
-      %p.wrapper__chat-side__groups__group__latest-message
-        あああああああ
+  = render 'shared/side-bar'
  
   .wrapper__chat-main
     .wrapper__chat-main__main-header
