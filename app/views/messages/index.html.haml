@@ -15,22 +15,12 @@
       .wrapper__chat-main__main-header__edit-btn
         Edit
     .wrapper__chat-main__messages
-      .wrapper__chat-main__messages__message
-        .wrapper__chat-main__messages__message__upper-info
-          %p.wrapper__chat-main__messages__message__upper-info__talker
-            taka
-          %p.wrapper__chat-main__messages__message__upper-info__date
-            2019/10/21(Mon) 14:41:43
-      %p.wrapper__chat-main__messages__message__text
-        あああああああ  
+      = render @messages
     .wrapper__chat-main__form
-      %form.wrapper__chat-main__form__new__message
-        %input{:name => "utf8", :type => "hidden",}/
-        %input{:name => "authenticity_token", :type => "hidden", :value => "gTV/KnwPVwMfsYecxzUAfln5AP41paH9zOPdHAFYfrJejbaNKdnARwhf64H8I3D6ZYnKfDdH9fNo0PPK0Z"}/
+      = form_for [@group, @message], class: 'wrapper__chat-main__form__new__message' do |f|
         .wrapper__chat-main__form__new__message__input-box
-          %input.wrapper__chat-main__form__new__message__input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-          %label.wrapper__chat-main__form__new__message__input-box__image{:for => "message_image"}
-            %i.fa.fa-image
-              %input.wrapper__chat-main__form__new__message__input-box__image__file{:name => "message[image]", :type => "file", id: "message_image"}/
-        %input.wrapper__chat-main__form__new__message__input-box__submit__btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/ 
-     
+          = f.text_field :content, class: 'wrapper__chat-main__form__new__message__input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'wrapper__chat-main__form__new__message__input-box__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'wrapper__chat-main__form__new__message__input-box__image__file'
+          = f.submit 'Send', class: 'wrapper__chat-main__form__new__message__input-box__submit__btn'

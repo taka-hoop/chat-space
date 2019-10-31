@@ -155,7 +155,7 @@
       
         &__input-box{
           position: relative;
-          width: 100%;
+          width: calc(100% - 150px);
           padding: 0 0 0 10px;
           background-color: #ffff;
 
@@ -164,6 +164,7 @@
           width: 100%;
           color: #434a54;
           border-style: none;
+          position: relative;
           
           }
           &__image{
@@ -185,6 +186,9 @@
             background-color: #38aef0;
             color: white;
             cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 20;
           }
 
       }
