@@ -35,6 +35,7 @@ $(function(){
       $(".wrapper__chat-main__messages").append(html);
       $(".wrapper__chat-main__messages").animate({scrollTop: $(".wrapper__chat-main__messages")[0].scrollHeight}, "fasts");
       $(".wrapper__chat-main__form__new__message__input-box__submit__btn").prop("disabled", false);
+      $(message_content).val("")
     })
     .fail(function(){
       alert("エラー");
