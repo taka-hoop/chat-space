@@ -13,7 +13,7 @@
           Member
           %li.wrapper__chat-main__main-header__left-box__member-list__member
       .wrapper__chat-main__main-header__edit-btn
-        Edit
+        = link_to "Edit",edit_group_path(@group.id)
     .wrapper__chat-main__messages
       = render @messages
     .wrapper__chat-main__form
