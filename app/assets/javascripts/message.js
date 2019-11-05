@@ -1,6 +1,6 @@
 $(function(){
   function buildPost(post){
-    img = post.image.url? `<img src='${post.image.url}'>` : "";
+    img = post.image? `<img src='${post.image}'>` : "";
     var html = `<div class="wrapper__chat-main__messages__message" data-message-id="${post.id}">
                   <div class="wrapper__chat-main__messages__message__upper-info">
                     <p class="wrapper__chat-main__messages__message__upper-info__talker">
@@ -37,8 +37,7 @@ $(function(){
       $(".wrapper__chat-main__messages").append(html);
       $(".wrapper__chat-main__messages").animate({scrollTop: $(".wrapper__chat-main__messages")[0].scrollHeight}, "fasts");
       $(".wrapper__chat-main__form__new__message__input-box__submit__btn").prop("disabled", false);
-      $("#message_content").val("")
-
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert("エラー");
