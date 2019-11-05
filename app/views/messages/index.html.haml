@@ -8,12 +8,14 @@
     .wrapper__chat-main__main-header
       .wrapper__chat-main__main-header__left-box
         %h2.wrapper__chat-main__main-header__left-box__current-group
-          グループ
+          = @group.name
         %ul.wrapper__chat-main__main-header__left-box__member-list
-          Member
-          %li.wrapper__chat-main__main-header__left-box__member-list__member
+          Member:
+          - @group.users.each do |user|
+            %li.wrapper__chat-main__main-header__left-box__member-list__member
+              = user.name
       .wrapper__chat-main__main-header__edit-btn
-        Edit
+        = link_to "Edit",edit_group_path(@group.id)
     .wrapper__chat-main__messages
       = render @messages
     .wrapper__chat-main__form
