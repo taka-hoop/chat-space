@@ -9,7 +9,9 @@ $(document).on(`turbolinks:load`, function(){
                     <p class="wrapper__chat-main__messages__message__upper-info__date">
                     ${post.updated_at}
                     </p>
-                    <p class="wrapper__chat-main__messages__message__text">
+                  </div>
+                  <div class="message__lower-info">
+                    <p class="message__lower-info__text">
                     ${post.content}
                     </p>
                     <p>
@@ -40,7 +42,9 @@ $(document).on(`turbolinks:load`, function(){
       $('#new_message')[0].reset();
     })
     .fail(function(){
-      alert("エラー");
+      alert("テキストを入力してください");
+      $(".wrapper__chat-main__form__new__message__input-box__submit__btn").prop("disabled", false);
+      
     })
   });
 
@@ -55,6 +59,9 @@ $(document).on(`turbolinks:load`, function(){
         data: {id: last_message_id}
       })
       .done(function (messages) {
+        if (messages.length == 0 ) {
+          return false;
+        }
         var insertHTML = '';
         messages.forEach(function (message) {
           insertHTML = buildPost(message);
