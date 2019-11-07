@@ -1,4 +1,4 @@
-$(function(){
+$(document).on(`turbolinks:load`, function(){
   function buildPost(post){
     img = post.image? `<img src='${post.image}'>` : "";
     var html = `<div class="wrapper__chat-main__messages__message" data-message-id="${post.id}">
